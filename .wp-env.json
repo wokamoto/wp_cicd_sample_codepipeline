@@ -1,0 +1,12 @@
+{
+  "core": "https://wordpress.org/wordpress-latest.zip",
+  "phpVersion": "8.2",
+  "mappings": {
+    "wp-content/languages": "./dest/wp-content/languages",
+    "wp-content/themes": "./dest/wp-content/themes",
+    "wp-content/plugins": "./dest/wp-content/plugins"
+  },
+  "config": {
+    "WP_DEBUG": true
+  }
+}

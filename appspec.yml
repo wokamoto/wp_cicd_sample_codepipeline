@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files:
+  - source: artifact.zip
+    destination: /var/www/html/source
+hooks:
+  AfterInstall:
+    - location: scripts/source_sync.sh
+      timeout: 300
+      runas: root
