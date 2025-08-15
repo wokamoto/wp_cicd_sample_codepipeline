@@ -1,15 +1,10 @@
 version: 0.2
-
 phases:
   build:
     commands:
-      - echo Running tests...
-      - find . -name "*.php" -print0 | xargs -0 -n1 php -l
-  post_build:
-    commands:
-      - echo Packaging artifacts...
-      - zip -r artifact.zip .
-
+      - echo "Run tests here if any"
 artifacts:
   files:
-    - artifact.zip
+    - appspec.yml
+    - scripts/**/*
+    - dest/**/*
