@@ -3,6 +3,7 @@ phases:
   build:
     commands:
       - echo "Run tests here if any"
+      - chmod +x scripts/*.sh || true
 artifacts:
   files:
     - appspec.yml
