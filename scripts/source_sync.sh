@@ -5,7 +5,7 @@ set -euo pipefail
 DEST_DIR="/var/www/html"
 RELEASES_DIR="$DEST_DIR/releases"
 CURRENT_LINK="$DEST_DIR/current"
-SRC_DIR="$PWD/dest"
+SRC_DIR="$DEST_DIR/source"
 NGINX_USER="nginx"
 NGINX_GROUP="www-data"
 
@@ -54,6 +54,11 @@ chown -R "${NGINX_USER}:${NGINX_GROUP}" "$RELEASE_DIR"
 
 log "Updating symlink: $CURRENT_LINK -> $RELEASE_DIR"
 ln -sfn "$RELEASE_DIR" "$CURRENT_LINK"
+
+# SRC_DIR を掃除
+if [[ -d "$SRC_DIR" ]]; then
+  rm -rf "$SRC_DIR"
+fi
 
 log "Done. Active release: $RELEASE_DIR"
 # サービスの reload/restart は ApplicationStart 等で実施推奨
