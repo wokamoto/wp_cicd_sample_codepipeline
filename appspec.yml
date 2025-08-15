@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: web
+  - source: dest
     destination: /var/www/html/source
 hooks:
   AfterInstall:
